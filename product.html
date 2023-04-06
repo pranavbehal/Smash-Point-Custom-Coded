@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="product.css" />
+    <script src="product.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img
+          class="nav-logo"
+          src="Smash_Point_Logo_Cropped-removebg-preview.png"
+        />
+      </div>
+      <ul class="nav-links">
+        <input type="checkbox" id="checkbox_toggle" />
+
+        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
+        <div class="menu">
+          <li><a class="hover-underline-animation" href="/">Home</a></li>
+          <li><a class="hover-underline-animation" href="/">Events</a></li>
+          <li><a class="hover-underline-animation" href="/">FAQs</a></li>
+          <li><a class="hover-underline-animation" href="/">Merch</a></li>
+          <button class="membership-nav-button">
+            <li><a href="/">Memberships</a></li>
+          </button>
+        </div>
+      </ul>
+    </nav>
+    <div class="product-display">
+      <div class="product-image-container">
+        <p class="product-previous-image">&#x3c;</p>
+        <img class="product-image" src="shirt.png" />
+        <p class="product-next-image">&#x3e;</p>
+      </div>
+      <div class="product-info-container">
+        <h1 class="product-name">Blue Shirt</h1>
+        <h2 class="product-price">$30.00</h2>
+        <div class="size">
+          <p class="size-p">Size:</p>
+          <div class="size-buttons">
+            <button class="size-button size-button-xsmall">X-Small</button>
+            <button class="size-button size-button-small current-product-size">Small</button>
+            <button class="size-button size-button-medium">Medium</button>
+            <button class="size-button size-button-large">Large</button>
+            <button class="size-button size-button-xlarge">X-Large</button>
+            <button class="size-button size-button-xxlarge">XX-Large</button>
+          </div>
+        </div>
+        <div class="quantity">
+          <p class="quantity-p">Quantity:</p>
+          <div class="quantity-button">
+            <p id="minus">&#8722;</p>
+            <p id="amount">1</p>
+            <p id="plus">&#43</p>
+          </div>
+        </div>
+        <button class="add-to-cart-button">Add to Cart</button>
+        <p class="short-description">A short description of the product</p>
+        <p class="sales-are-final">ALL SALES ARE FINAL</p>
+        <div class="three-info-bars">
+          <div class="question" onclick="toggleAnswer1(this)">
+            <p class="qa-icon" id="qa-icon1">&#43</p>
+            Product Information
+          </div>
+          <div class="answer">Product Information placeholder text here</div>          <hr class="three-bars-break">
+
+          <div class="question" onclick="toggleAnswer2(this)">
+            <p class="qa-icon" id="qa-icon2">&#43</p>
+            Sizing Information
+          </div>
+          <div class="answer">Sizing information placeholder text here</div>          <hr class="three-bars-break">
+
+          <div class="question" onclick="toggleAnswer3(this)">
+            <p class="qa-icon" id="qa-icon3">&#43</p>
+            Shipping and Return Information
+          </div>
+          <div class="answer">
+            Shipping and Return Information placeholder text here
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let a = 1;
+    document.getElementById("plus").addEventListener("click", () => {
+      console.log("plus");
+      a++;
+      document.getElementById("amount").innerText = a;
+    });
+
+    document.getElementById("minus").addEventListener("click", () => {
+      if (a > 1) {
+        a--;
+        document.getElementById("amount").innerText = a;
+      }
+    });
+
+    function toggleAnswer1(elem) {
+      var answer = elem.nextElementSibling;
+      if (answer.style.display === "block") {
+        answer.style.display = "none";
+        document.getElementById("qa-icon1").innerHTML = "&#43";
+      } else {
+        answer.style.display = "block";
+        document.getElementById("qa-icon1").innerHTML = "&#8722;";
+      }
+    }
+
+    function toggleAnswer2(elem) {
+      var answer = elem.nextElementSibling;
+      if (answer.style.display === "block") {
+        answer.style.display = "none";
+        document.getElementById("qa-icon2").innerHTML = "&#43";
+      } else {
+        answer.style.display = "block";
+        document.getElementById("qa-icon2").innerHTML = "&#8722;";
+      }
+    }
+
+    function toggleAnswer3(elem) {
+      var answer = elem.nextElementSibling;
+      if (answer.style.display === "block") {
+        answer.style.display = "none";
+        document.getElementById("qa-icon3").innerHTML = "&#43";
+      } else {
+        answer.style.display = "block";
+        document.getElementById("qa-icon3").innerHTML = "&#8722;";
+      }
+    }
+  </script>
+</html>
