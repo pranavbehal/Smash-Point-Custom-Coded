@@ -154,5 +154,19 @@
         document.getElementById("qa-icon3").innerHTML = "&#8722;";
       }
     }
+    
+    const sizeButtons = document.querySelectorAll(".size-button");
+
+sizeButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const currentlySelectedButton = document.querySelector(
+      ".current-product-size"
+    );
+    currentlySelectedButton.classList.remove("current-product-size");
+    button.classList.add("current-product-size");
+  });
+});
+
+
   </script>
 </html>
